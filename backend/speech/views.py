@@ -9,6 +9,11 @@ import whisper
 import os
 import librosa
 from django.http import HttpResponse
+from django.shortcuts import render
+
+def index(request):
+    return render(request, 'speechapp/index.html')
+
 
 class UploadAudioFileView(APIView):
     def post(self, request, *args, **kwargs):

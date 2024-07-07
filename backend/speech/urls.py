@@ -11,9 +11,11 @@
 
 from django.urls import path
 from .views import UploadAudioFileView, RetrieveAudioFileView, TranscribeAudioFileView
+from . import views
 
 urlpatterns = [
     path('upload/', UploadAudioFileView.as_view(), name='upload_audio'),
     path('retrieve/', RetrieveAudioFileView.as_view(), name='retrieve_all_audio'),
     path('transcribe/<path:file_path>/', TranscribeAudioFileView.as_view(), name='transcribe_audio'),
+    path('', views.index, name='index'),
 ]
